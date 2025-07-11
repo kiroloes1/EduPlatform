@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para">Original Text</p>
+    <img id="img" src="image.jpg" alt="img" />
+
+    <script>
+      let para=document.querySelector("#para");
+      console.log(para.textContent);
+      para.innerHTML="hello";
+      console.log(para)
+    </script>
+  </body>
+</html>

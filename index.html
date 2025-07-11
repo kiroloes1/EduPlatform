@@ -39,6 +39,67 @@
     <!-- auto animation  -->
      <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+
+     <style>
+      .fa-bars ,.fa-xmark{
+        font-size:1.8em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1em;
+        display: none;
+         color: #2e9ddd;
+         cursor: pointer;
+         transition: 5s ease;
+         
+      }
+      .fa-xmark{
+        display: none;
+      }
+      .toggle{
+        display: none;
+      }
+      .list{
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        transition: 5s ease;
+
+
+      }
+      .list > div{
+           display: flex;
+           justify-content:space-evenly;
+           align-items: center;
+            box-shadow: 0 3px 10px rgba(128, 128, 128, 0.486);
+            width: 50%;
+            height: 50%;
+            border-radius: 15px;
+            flex-wrap: wrap;
+            
+      }
+      .list > div a{
+        text-decoration: none;
+        font-size: 1.4em;
+        box-shadow: 0 3px 10px rgba(128, 128, 128, 0.288);
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-weight: 500;
+
+      }
+      .list .login{
+           color: #2e9ddd;
+      }
+      @media (max-width:1000px) {
+        .fa-bars{
+          
+          display: flex;
+        }
+      }
+     </style>
 </head>
 
 <body>
@@ -70,6 +131,9 @@
         </form>
         <p class="switch-form">Already have an account? <a href="#" class="show-login">Log in</a></p>
       </div>
+
+      
+      
     </div>
   </div>
 </div>
@@ -97,8 +161,18 @@
                 <li><a class="login" href="#">Login</a></li>
                 <li class="signup2"><a class="signup" href="#">SignUP</a></li>
               </ul>
+
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-duotone fa-solid fa-xmark"></i>
         </nav>
       </header>
+
+      <div class="list">
+        <div>
+          <a class="login" href="#">Login</a>
+          <a class="signup" href="#">SignUp</a>
+        </div>
+      </div>
 
       <main>
         <section class="main-section">
@@ -371,12 +445,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // DOM Elements
   const authPopup = document.getElementById('authPopup');
   const closeBtn = document.querySelector('.close-btn');
-  const loginLink = document.querySelector('.login');
-  const signupLink = document.querySelector('.signup');
+  const loginLink = document.querySelectorAll('.login')[0];
+  const signupLink = document.querySelectorAll('.signup')[0];
+   const loginLink2 = document.querySelectorAll('.login')[1];
+  const signupLink2 = document.querySelectorAll('.signup')[1];
   const showLogin = document.querySelector('.show-login');
   const showSignup = document.querySelector('.show-signup');
   const loginForm = document.querySelector('.login-form');
   const signupForm = document.querySelector('.signup-form');
+   const list = document.querySelector('.fa-bars');
+  const closed = document.querySelector('.fa-xmark');
+  const menu = document.querySelector('.list');
   
   // Open popup when clicking login
   loginLink.addEventListener('click', function(e) {
@@ -393,6 +472,35 @@ document.addEventListener('DOMContentLoaded', function() {
     signupForm.classList.add('active');
     loginForm.classList.remove('active');
   });
+
+    loginLink2.addEventListener('click', function(e) {
+    e.preventDefault();
+    authPopup.style.display = 'flex';
+    loginForm.classList.add('active');
+    signupForm.classList.remove('active');
+  });
+  
+  // Open popup when clicking signup
+  signupLink2.addEventListener('click', function(e) {
+    e.preventDefault();
+    authPopup.style.display = 'flex';
+    signupForm.classList.add('active');
+    loginForm.classList.remove('active');
+  });
+   
+  list.addEventListener('click',e=>{
+    e.preventDefault();
+    menu.style.display='flex';
+    list.style.display='none';
+    closed.style.display='flex';
+  })
+    closed.addEventListener('click',e=>{
+    e.preventDefault();
+    menu.style.display='none';
+    list.style.display='flex';
+    closed.style.display='none';
+  })
+  
   
   // Close popup
   closeBtn.addEventListener('click', function() {
@@ -432,11 +540,65 @@ document.addEventListener('DOMContentLoaded', function() {
     authPopup.style.display = 'none';
   });
 });
+
+
 </script>
 
      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+
+
+
+
+
+
+<script>
+  // let name="kiroloes reda";
+  // let age =21;
+  // let isStudent=true;
+  // console.log(typeof(name));
+  // console.log(typeof(age));
+  // console.log(typeof(isStudent));
+
+  // console.log("I'm learning \"javaScript\" now");
+
+//   console.log("10" + 5);
+// console.log(+"10" - 5);
+// console.log(true + true);
+// console.log(115-115*.10);
+
+// let x="javaScript Basics";
+// console.log(x.trim().toUpperCase());
+// console.log(x.includes("Script"))
+
+// let  x=12.34678;
+// console.log(x.toFixed(2));
+// console.log(x.toString());
+
+// let x=["apple" , "banana"];
+// x.push("water mellon")
+// console.log(x);
+// x.shift();
+// console.log(x)
+
+// const nums = [1, 2, 3, 4, 5, 6, 7];
+// console.log(nums.slice(2,6));
+
+// for(let i=1; i<=20; i++){
+//   console.log(i)
+// }
+
+// for(let i =1; i<=10; i++){
+//   console.log(`${i} * ${i} = ${i*i}` );
+// }
+
+// for(let i =1; i<=3; i++){
+//  for(let j=1;j<=10;j++){
+//    console.log(`${i} * ${j} = ${j*i}` );
+//  }
+// }
 </script>
 </body>
 </html>

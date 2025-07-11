@@ -161,7 +161,7 @@ main .main-navigation a{
     text-decoration: none;
     
     padding: 15px 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 1.1em;
     font-weight: 600;   
     
@@ -170,6 +170,7 @@ main .main-navigation a{
 .main-navigation .main-left-button{
     background-color: rgb(46, 157, 221) ;
     color: rgb(248, 247, 247);
+    box-shadow: 0 4px 10px gray;
     
 }
 
@@ -177,12 +178,13 @@ main .main-navigation a{
 border-style: double;
 color: #fcb902;
 border-color: rgb(46, 157, 221);
+border-width: 4px;
 }
 .main-navigation .main-right-button:hover{
  background-color: #fcb902;
  color: aliceblue;
  border-style: none;
- transition: 0.3s ease;
+ transition: 0.1s ease-in-out;
 }
 
 main .who-we-are{
@@ -203,16 +205,16 @@ width: 5em;
    
     color: #fcb902;
     font-weight: 700;
-    text-shadow: 5px 5px 3px gray;
-        font-size: 2.5em;
-    font-weight: bold;
+    text-shadow: 0px 3px 3px gray;
+    font-size: 2.5em;
+    
 }
 .who-we-are p{
     color: aliceblue;
     font-size: 1.5em;
     padding: 1em;
     font-weight: 600;
-    text-shadow: 5px 5px 3px gray;
+    text-shadow: 0px 3px 3px gray;
 }
 .who-we-are div{
         display: flex;
@@ -478,10 +480,7 @@ footer .font i{
     font-size: 2em;
     margin-bottom: 1em;
 }
-footer .font i:hover{
-    transform: rotate(25deg);
-    transition: 0.5s ease;
-}
+
 .fa-facebook:hover{
     color:#1570d8
 }
@@ -619,6 +618,14 @@ nav ul {
 }
 nav ul a {
     padding: 20px 10px;
+}
+main .book .card:hover {
+ transform: scale(1.05);
+ transition: 0.5s ease-in-out;
+}
+footer .social-media .font i:hover{
+    transform: rotate(25deg);
+    transition: 0.5s ease;
 }
 }
 
